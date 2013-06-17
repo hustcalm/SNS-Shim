@@ -5,7 +5,7 @@ A simple wrapper to encapsulate the common SNS APIs, QQ, Weibo, Renren, Douban, 
 
 Basically, we will focus on Java implementation and the main step will be, first get authorized, then do whatever with the access token and uid.
 
-Keypoints are OAuth(to deal with user authorization) and Sqlite(to store user information, mainly access token and uid).
+Keypoints are OAuth(to deal with user authorization) and Sqlite(to store user information, mainly access token and uid) and Maven(to maintain the dependencies of all the Third Party libs and Java SDKs).
 
 ## OpenAPI
 *   [QQ Connect](http://connect.qq.com/)
@@ -13,6 +13,7 @@ Keypoints are OAuth(to deal with user authorization) and Sqlite(to store user in
 *   [RenRen](http://dev.renren.com/)
 *   [Tecent Weibo](http://dev.t.qq.com/)
 *   [Douban](http://developers.douban.com/)
+*   [163 Weibo](http://open.t.163.com/)
 
 ## OAuth
 
@@ -28,6 +29,7 @@ Keypoints are OAuth(to deal with user authorization) and Sqlite(to store user in
 *   [RenRen OAuth](http://wiki.dev.renren.com/wiki/Authentication)
 *   [Tecent Weibo OAuth](http://wiki.open.t.qq.com/index.php/OAuth%E6%8E%88%E6%9D%83%E8%AF%B4%E6%98%8E)
 *   [Douban OAuth](http://www.douban.com/service/apidoc/auth)
+*   [163 Weibo OAuth](http://open.t.163.com/wiki/index.php?title=OAuth%E6%8E%88%E6%9D%83%E8%AF%B4%E6%98%8E)
 
 ### Existing Wraper for OAuth
 *   [oauth-api](http://code.google.com/p/oauth-api/)
@@ -39,4 +41,7 @@ Keypoints are OAuth(to deal with user authorization) and Sqlite(to store user in
 *   Integrate the SDK to the wrapper
 
 ## The wrapper
+### Existing projects
+*   [eeplat-social-api](http://code.google.com/p/eeplat-social-api/)
+*   [socialauth](http://code.google.com/p/socialauth/)
 
