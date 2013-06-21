@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>           
+  <classpathentry kind="src" path="openapi4j/qq-connect"/>
+  <classpathentry kind="src" path="openapi4j/weibo"/>
+  <classpathentry kind="src" path="openapi4j/renren"/>
+	<classpathentry kind="src" path="openapi4j/douban"/>
+	<classpathentry kind="src" path="openapi4j/163"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/commons/commons-codec.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/commons/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/commons/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/commons/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/commons/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/google-http-client-1.10.3-beta.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/google-http-client-android2-1.10.3-beta.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/google-http-client-android3-1.10.3-beta.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/google-http-client-appengine-1.10.3-beta.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/gson-2.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/guava-11.0.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/httpclient-4.0.3.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/jackson-core-asl-1.9.4.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/protobuf-java-2.2.0.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/xpp3-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/GUI/DJNativeSwing.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/GUI/DJNativeSwing-SWT.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/GUI/swt-3.7M5-win32-win32-x86.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/qq-connect/Sdk4J.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/renren/json_simple-1.1.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/weibo/jackson-all-1.8.5.jar"/>
+	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/weibo/log4j-1.2.16.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
