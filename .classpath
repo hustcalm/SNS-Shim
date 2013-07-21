@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>           
-  <classpathentry kind="src" path="openapi4j/qq-connect"/>
-  <classpathentry kind="src" path="openapi4j/weibo"/>
-  <classpathentry kind="src" path="openapi4j/renren"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="openapi4j/qq-connect"/>
+	<classpathentry kind="src" path="openapi4j/weibo"/>
+	<classpathentry kind="src" path="openapi4j/renren"/>
 	<classpathentry kind="src" path="openapi4j/douban"/>
 	<classpathentry kind="src" path="openapi4j/163"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
@@ -26,9 +26,6 @@
 	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/protobuf-java-2.2.0.jar"/>
 	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/google-http-java-client-1.10.3-beta/xpp3-1.1.4c.jar"/>
 	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/douban/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/GUI/DJNativeSwing.jar"/>
-	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/GUI/DJNativeSwing-SWT.jar"/>
-	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/GUI/swt-3.7M5-win32-win32-x86.jar"/>
 	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/qq-connect/Sdk4J.jar"/>
 	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/renren/json_simple-1.1.jar"/>
 	<classpathentry kind="lib" path="G:/CAS/Job/FBT/OpenAPI/SNS-Shim/lib/weibo/jackson-all-1.8.5.jar"/>

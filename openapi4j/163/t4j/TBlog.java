@@ -35,6 +35,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import com.fbt.openapi.wrapper.T163Wrapper;
+
 import t4j.data.Comment;
 import t4j.data.DirectMessage;
 import t4j.data.PagableResponseList;
@@ -59,12 +61,12 @@ import t4j.org.json.JSONObject;
  */
 public class TBlog extends TBlogSupport {
 	
-	public static final String CONSUMER_KEY = "";
-	public static final String CONSUMER_SECRET = "";
+	public static final String CONSUMER_KEY = T163Wrapper.CONSUMER_KEY;
+	public static final String CONSUMER_SECRET = T163Wrapper.CONSUMER_SECRET;
 
     private String baseURL = "http://api.t.163.com/";
     
-    private String redirectURL;
+    private String redirectURL = T163Wrapper.REDIRECT_URL;
     
 	public String getRedirectURL() {
 		return redirectURL;
@@ -86,6 +88,7 @@ public class TBlog extends TBlogSupport {
         if(version == OAuthVersion.V2) {
         	this.baseURL = "https://api.t.163.com/";
         	this.http.setHttps(true);
+        	this.http.setOAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET);
         }else if(version == OAuthVersion.V1) {
         	this.baseURL = "http://api.t.163.com/";
             http.setRequestTokenURL("http://api.t.163.com/oauth/request_token");
