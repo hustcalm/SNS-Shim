@@ -21,6 +21,13 @@ public class WeiboOAuth2Demo {
 	public static void main(String[] args) throws WeiboException,IOException {
 		// TODO Auto-generated method stub
 		WeiboWrapper  weiboWrapper = new WeiboWrapper();
+		
+		// Set App Key and App Secret
+		String clientID = "yourClientID";
+		String clientSecret = "yourClientSecret";
+		weiboWrapper.setClientID(clientID);
+		weiboWrapper.setClientSecret(clientSecret);
+		
 		System.out.println("以下是新浪微博的用户授权URL:");
 		String userAuthorizeURL = weiboWrapper.getUserAuthorizeURL("code", null);
 		System.out.println(userAuthorizeURL);
@@ -82,7 +89,49 @@ public class WeiboOAuth2Demo {
 		//String newStatus = br.readLine();
 		//weiboWrapper.updateStatus(access_token, newStatus);
 		
-		weiboWrapper.updateStatus(access_token, "这是一条测试信息！");
+		try {
+			weiboWrapper.updateStatus(access_token, "这是一条测试信息！");
+		} catch (WeiboException e) {
+			e.printStackTrace();
+		}
+		
+		// 测试验证AccessToken以及获取粉丝列表
+		try {
+			boolean isAccessTokenValidated = weiboWrapper.validateAccessToken(access_token);
+			if(isAccessTokenValidated) {
+				System.out.println("AccessToken: " + access_token + " is valid:-)");
+			}
+			else
+			{
+				System.out.println("AccessToken: " + access_token + " is valid:-)");
+			}
+			
+			/*
+			String dummyAccessToken = "123456789calm";
+			boolean isAccessTokenValidated1 = weiboWrapper.validateAccessToken(dummyAccessToken);
+			if(isAccessTokenValidated1) {
+				System.out.println("AccessToken: " + dummyAccessToken + " is valid:-)");
+			}
+			else
+			{
+				System.out.println("AccessToken: " + dummyAccessToken + " is valid:-)");
+			}
+			*/
+			
+			// Get followers now
+			UserWapper userWapper = weiboWrapper.getFollowersById(access_token, uid);
+			long totalFollowers = userWapper.getTotalNumber();
+			System.out.println("You have " + totalFollowers + " followers in total");
+			
+			String[] followerIds = weiboWrapper.getFollowersIdsById(access_token, uid);
+			System.out.println("Your follower Ids are: ");
+			for(String userID: followerIds)
+				System.out.print(userID + ",");
+			
+		} catch (WeiboException e) {
+			e.printStackTrace();
+		}
+		
 		System.out.print("The End!");
 	}
 
