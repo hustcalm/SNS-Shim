@@ -14,13 +14,30 @@ public class WeiboWrapper extends Weibo {
 	
 	private static final long serialVersionUID = -3170640319660127937L;
 	
-	static final String client_ID = "yourClientID";
-	static final String client_SERCRET = "yourClientSecret";
+	private String client_ID = "yourClientID";
+	private String client_SERCRET = "yourClientSecret";
 	static final String redirect_URI = "http://hustcalm.me";
 	static final String baseURL = "https://api.weibo.com/2/";
 	static final String accessTokenURL = "https://api.weibo.com/oauth2/access_token";
 	static final String authorizeURL = "https://api.weibo.com/oauth2/authorize";
 	static final String rmURL = "https://rm.api.weibo.com/2/";
+	
+	/**
+	 * 
+	 * @param clientID
+	 */
+	public void setClientID(String clientID) {
+		this.client_ID = clientID;
+	}
+	
+	/**
+	 * 
+	 * @param clientSecret
+	 */
+	public void setClientSecret(String clientSecret) {
+		this.client_SERCRET = clientSecret;
+	}
+	
 	
 	/**
 	 * 
@@ -122,5 +139,91 @@ public class WeiboWrapper extends Weibo {
 	public Status updateStatus(String accessToken, String newStatus) throws WeiboException, UnsupportedEncodingException {
 		this.setToken(accessToken);
 		return updateUserStatus(newStatus);
+	}
+	
+	/**
+	 * 
+	 * @param accessToken
+	 * @return
+	 * @throws WeiboException
+	 * @throws JSONException 
+	 */
+	public boolean validateAccessToken(String accessToken) throws WeiboException, JSONException {
+		// Refer http://open.weibo.com/wiki/Oauth2/get_token_info
+		
+		Response requestRes = client.post(
+				getTokenInfoURL, 
+				new PostParameter[] {
+						new PostParameter("access_token",accessToken) 
+				});
+		JSONObject retJSON = requestRes.asJSONObject();
+		String expire_in_seconds = retJSON.getString("expire_in");
+		if(Integer.parseInt(expire_in_seconds) <= 0)
+			return false;
+		else
+			return true;
+		
+	}
+	
+	/**
+	 * 
+	 * @param uid 需要查询的用户UID
+	 * @return
+	 * @throws WeiboException
+	 */
+	public UserWapper getFollowersById(String accessToken, String uid) throws WeiboException {
+		this.setToken(accessToken);
+		return User.constructWapperUsers(client.get(
+				baseURL + "friendships/followers.json",
+				new PostParameter[] { new PostParameter("uid", uid) }));
+	}
+	
+	/**
+	 * 
+	 * @param uid 需要查询的用户UID
+	 * @param count 单页返回的记录条数，默认为50，最大不超过200。
+	 * @param cursor 返回结果的游标，下一页用返回值里的next_cursor，上一页用previous_cursor，默认为0
+	 * @return
+	 * @throws WeiboException
+	 */
+	public UserWapper getFollowersById(String accessToken, String uid, Integer count, Integer cursor)
+			throws WeiboException {
+		this.setToken(accessToken);
+		return User.constructWapperUsers(client.get(
+				baseURL + "friendships/followers.json",
+				new PostParameter[] { new PostParameter("uid", uid),
+						new PostParameter("count", count.toString()),
+						new PostParameter("cursor", cursor.toString()) }));
+	}
+	
+	/**
+	 * 
+	 * @param uid 需要查询的用户UID
+	 * @return
+	 * @throws WeiboException
+	 */
+	public String[] getFollowersIdsById(String accessToken, String uid) throws WeiboException {
+		this.setToken(accessToken);
+		return User.constructIds(client.get(
+				baseURL + "friendships/followers/ids.json",
+				new PostParameter[] { new PostParameter("uid", uid) }));
+	}
+	
+	/**
+	 * 
+	 * @param uid 需要查询的用户UID
+	 * @param count 单页返回的记录条数，默认为50，最大不超过200。
+	 * @param cursor 返回结果的游标，下一页用返回值里的next_cursor，上一页用previous_cursor，默认为0
+	 * @return
+	 * @throws WeiboException
+	 */
+	public String[] getFollowersIdsById(String accessToken, String uid, Integer count,
+			Integer cursor) throws WeiboException {
+		this.setToken(accessToken);
+		return User.constructIds(client.get(
+				baseURL + "friendships/followers/ids.json",
+				new PostParameter[] { new PostParameter("uid", uid),
+						new PostParameter("count", count.toString()),
+						new PostParameter("cursor", cursor.toString()) }));
 	}
 }
