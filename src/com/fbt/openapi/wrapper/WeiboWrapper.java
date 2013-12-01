@@ -1,14 +1,16 @@
 package com.fbt.openapi.wrapper;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
 import weibo4j.Weibo;
 import weibo4j.http.AccessToken;
+import weibo4j.http.Response;
 import weibo4j.model.PostParameter;
 import weibo4j.model.Status;
 import weibo4j.model.User;
+import weibo4j.model.UserWapper;
 import weibo4j.model.WeiboException;
+import weibo4j.org.json.JSONException;
+import weibo4j.org.json.JSONObject;
 
 public class WeiboWrapper extends Weibo {
 	
@@ -20,6 +22,7 @@ public class WeiboWrapper extends Weibo {
 	static final String baseURL = "https://api.weibo.com/2/";
 	static final String accessTokenURL = "https://api.weibo.com/oauth2/access_token";
 	static final String authorizeURL = "https://api.weibo.com/oauth2/authorize";
+	static final String getTokenInfoURL = "https://api.weibo.com/oauth2/get_token_info";
 	static final String rmURL = "https://rm.api.weibo.com/2/";
 	
 	/**
@@ -225,5 +228,14 @@ public class WeiboWrapper extends Weibo {
 				new PostParameter[] { new PostParameter("uid", uid),
 						new PostParameter("count", count.toString()),
 						new PostParameter("cursor", cursor.toString()) }));
+	}
+	
+	/**
+	 * 
+	 * @param accessToken
+	 * @return
+	 */
+	public String getUserId(AccessToken accessToken) throws WeiboException {
+		return accessToken.getUid();
 	}
 }
